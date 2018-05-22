@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-\\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\Debug\
+\\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\Release\
 LaunchPad
 none
 false
-DEBUG;TRACE
+TRACE
 \\DISKSTATION\Feeds\LaunchPad\LaunchPad\App.xaml
 3405526288
 
-111311617793
+7-1621827435
 131569487696
 MainWindow.xaml;Progress.xaml;SFF.xaml;
 

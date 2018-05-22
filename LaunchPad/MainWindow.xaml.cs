@@ -19,9 +19,10 @@ namespace LaunchPad {
             InitializeComponent();
         }
 
-        private void btn_SFF_Click(object sender, RoutedEventArgs e) {
-            SFF stocks = new SFF();
-            stocks.Show();
-        }
-    }
+		private void Btn_Stocks_Click(object sender, RoutedEventArgs e)
+		{
+			SFF stocks = new SFF();
+			stocks.Show();
+		}
+	}
 }

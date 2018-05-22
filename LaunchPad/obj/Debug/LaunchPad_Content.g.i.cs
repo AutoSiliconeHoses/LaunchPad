@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ashlogo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ash-black.ico")]
 
 
