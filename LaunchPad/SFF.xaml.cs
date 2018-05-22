@@ -19,6 +19,10 @@ namespace LaunchPad {
             InitializeComponent();
         }
 
+        private void check_all() {
+
+        }
+
         private void Run_Click(object sender, RoutedEventArgs e) {
             string arguments = " ";
             
