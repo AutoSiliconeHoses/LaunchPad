@@ -27,6 +27,7 @@
         <CheckBox x:Name="chk_open" Content="Open after completion" FontFamily="Arial" Foreground="White" Margin="39,272,0,0" HorizontalAlignment="Left" Width="145" Height="20" VerticalAlignment="Top"/>
         <Button x:Name="btn_chkAll" Content="Check All" HorizontalAlignment="Left" Margin="39,207,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_chkAll_Click"/>
         <Button x:Name="btn_unchkAll" Content="Uncheck All" HorizontalAlignment="Left" Margin="115,207,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_unchkAll_Click"/>
+        <Label x:Name="lbl_history" Content="Last Run by __ at __" HorizontalAlignment="Left" Height="25" Margin="0,283,-0.4,0" VerticalAlignment="Top" Width="233" FontSize="8" Foreground="White"/>
 
     </Grid>
 </Window>

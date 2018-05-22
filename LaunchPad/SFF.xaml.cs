@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace LaunchPad {
     public partial class SFF : Window {
         public SFF() {
             InitializeComponent();
         }
-		
-		private void Checker (bool opt) {
+
+        private void Checker (bool opt) {
 			foreach (Control chk in stck_checks.Children) {
 				if (chk.GetType() == typeof(CheckBox)) {
 					((CheckBox)chk).IsChecked = opt;
@@ -75,13 +77,12 @@ namespace LaunchPad {
 				arguments = arguments + "op";
 			}
 
-			//string msg = arguments + Environment.NewLine + count + " -eq " + stck_checks.Children.Count;
-			//MessageBox.Show(msg);
-
 			Process.Start("Powershell.exe", @"& '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\runall.ps1'" + arguments);
 
-            //Progress prog = new Progress();
-            //prog.Show();
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            string timeString = DateTime.Now.ToString("h:mm:ss tt");
+
+            lbl_history.Content = "Last run by " + userName + " @ " + timeString;
         }
     }
 }
