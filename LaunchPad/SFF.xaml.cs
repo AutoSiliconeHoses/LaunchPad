@@ -19,6 +19,7 @@ namespace LaunchPad {
     public partial class SFF : Window {
         public SFF() {
             InitializeComponent();
+            lbl_history.Content = File.ReadLines("log.txt").Last();
         }
 
         private void Checker (bool opt) {
@@ -28,6 +29,16 @@ namespace LaunchPad {
 				}
 			}
 		}
+
+        private void HistoryWrite (string textToAdd)
+        {
+            string fileName = "log.txt";
+
+            using (StreamWriter writer = new StreamWriter(fileName, true))
+            {
+                writer.Write(textToAdd);
+            }
+        }
 
         private void Btn_chkAll_Click(object sender, RoutedEventArgs e) {
 			Checker(true);
@@ -81,8 +92,8 @@ namespace LaunchPad {
 
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             string timeString = DateTime.Now.ToString("h:mm:ss tt");
-
-            lbl_history.Content = "Last run by " + userName + " @ " + timeString;
+            HistoryWrite("Last run by " + userName + " @ " + timeString + Environment.NewLine);
+            lbl_history.Content = File.ReadLines("log.txt").Last();
         }
     }
 }
