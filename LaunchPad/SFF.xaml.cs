@@ -14,9 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml;
+using System.Management;
 
 namespace LaunchPad {
     public partial class SFF : Window {
+
         public SFF() {
             InitializeComponent();
             lbl_history.Content = File.ReadLines("log.txt").Last();
@@ -49,9 +51,25 @@ namespace LaunchPad {
 			Checker(false);
 		}
 
-		private void Btn_Run_Click(object sender, RoutedEventArgs e) {
-            string arguments = " ";
+        private void Btn_openSite_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://sellercentral.amazon.co.uk/listing/upload?_encoding=UTF8&ref=xx_download_apvu_xx");
+        }
 
+        private void Btn_openFolder_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(@"\\DISKSTATION\Feeds\Stock File Fetcher\Upload");
+        }
+
+        private void Btn_Run_Click(object sender, RoutedEventArgs e) {
+            string arguments = " ";
+            int ship = 0;
+
+            //Shipping Argument
+            ship = (int)sli_ship.Value;
+            arguments += ship.ToString() + " ";
+
+            //Supplier Arguments
             if (chk_sx.IsChecked.Value == true) {
                 arguments += "sx ";
             }
@@ -76,7 +94,7 @@ namespace LaunchPad {
             if (chk_kb.IsChecked.Value == true) {
                 arguments += "kb ";
             }
-            if (chk_vo.IsChecked.Value == true) {
+            if (chk_dc.IsChecked.Value == true) {
                 arguments += "dc ";
             }
             if (chk_kn.IsChecked.Value == true) {
@@ -88,11 +106,17 @@ namespace LaunchPad {
 				arguments = arguments + "op";
 			}
 
-			Process.Start("Powershell.exe", @"& '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\runall.ps1'" + arguments);
+            //Start Powershell
+            Process.Start("PowerShell.exe", @"& '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\runall.ps1'" + arguments);
 
+            //Open Progress bar
+            Progress prog = new Progress();
+            prog.Show();
+
+            //Update Log
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            string timeString = DateTime.Now.ToString("h:mm:ss tt");
-            HistoryWrite("Last run by " + userName + " @ " + timeString + Environment.NewLine);
+            string timeString = DateTime.Now.ToString("d/M/yyyy htt");
+            HistoryWrite(Environment.NewLine + "Last run by " + userName + " @ " + timeString);
             lbl_history.Content = File.ReadLines("log.txt").Last();
         }
     }
