@@ -10,13 +10,14 @@
         <Label x:Name="lbl_title" Content="Stocks" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="76" Foreground="White" FontFamily="Arial" FontSize="22" Height="35"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="5,239,0,-50.8" VerticalAlignment="Top" Width="0"/>
         <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="210" Margin="10,40,0,0">
-            <StackPanel x:Name="stck_checks" Height="249" Width="200" Background="#FF292929">
+            <StackPanel x:Name="stck_checks" Height="277" Width="200" Background="#FF292929">
                 <CheckBox x:Name="chk_dc" Content="Decco" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_dp" Content="Draper" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_hh" Content="Home Hardware" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_kn" Content="Kilen" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_kb" Content="KYB" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_sx" Content="Stax" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="93"/>
+                <CheckBox x:Name="chk_sxp" Content="Stax Prime" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_tb" Content="ToolBank" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="93"/>
                 <CheckBox x:Name="chk_ts" Content="ToolStream" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_tl" Content="Tetrosyl" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>

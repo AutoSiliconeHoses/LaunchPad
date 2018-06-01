@@ -14,10 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml;
-using System.Management;
+using System.Management.Automation;
 
 namespace LaunchPad {
     public partial class SFF : Window {
+        public int count;
 
         public SFF() {
             InitializeComponent();
@@ -32,12 +33,10 @@ namespace LaunchPad {
 			}
 		}
 
-        private void HistoryWrite (string textToAdd)
-        {
+        private void HistoryWrite (string textToAdd) {
             string fileName = "log.txt";
 
-            using (StreamWriter writer = new StreamWriter(fileName, true))
-            {
+            using (StreamWriter writer = new StreamWriter(fileName, true)) {
                 writer.Write(textToAdd);
             }
         }
@@ -46,8 +45,7 @@ namespace LaunchPad {
 			Checker(true);
         }
 
-		private void Btn_unchkAll_Click(object sender, RoutedEventArgs e)
-		{
+		private void Btn_unchkAll_Click(object sender, RoutedEventArgs e) {
 			Checker(false);
 		}
 
@@ -63,7 +61,8 @@ namespace LaunchPad {
 
         private void Btn_Run_Click(object sender, RoutedEventArgs e) {
             string arguments = " ";
-            int ship = 0;
+            int ship = 4;
+            count = 0;
 
             //Shipping Argument
             ship = (int)sli_ship.Value;
@@ -71,47 +70,51 @@ namespace LaunchPad {
 
             //Supplier Arguments
             if (chk_sx.IsChecked.Value == true) {
-                arguments += "sx ";
+                arguments += "sx- ";
+                count++;
+            }
+            if (chk_sxp.IsChecked.Value == true) {
+                arguments += "sxp- ";
+                count++;
             }
             if (chk_tb.IsChecked.Value == true) {
-                arguments += "tb ";
+                arguments += "tb- ";
+                count++;
             }
             if (chk_hh.IsChecked.Value == true) {
-                arguments += "hh ";
+                arguments += "hh- ";
+                count++;
             }
             if (chk_ts.IsChecked.Value == true) {
-                arguments += "ts ";
+                arguments += "ts- ";
+                count++;
             }
             if (chk_dp.IsChecked.Value == true) {
-                arguments += "dp ";
+                arguments += "dp- ";
             }
             if (chk_vo.IsChecked.Value == true) {
-                arguments += "vo ";
+                arguments += "vo- ";
             }
             if (chk_tl.IsChecked.Value == true) {
-                arguments += "tl ";
+                arguments += "tl- ";
             }
             if (chk_kb.IsChecked.Value == true) {
-                arguments += "kb ";
+                arguments += "kb- ";
             }
             if (chk_dc.IsChecked.Value == true) {
-                arguments += "dc ";
+                arguments += "dc- ";
             }
             if (chk_kn.IsChecked.Value == true) {
-                arguments += "kn ";
+                arguments += "kn- ";
             }
 
             //Open file after completion
-			if (chk_open.IsChecked.Value == true) {
-				arguments = arguments + "op";
-			}
+            if (chk_open.IsChecked.Value == true) {
+                arguments = arguments + "op-";
+            }
 
             //Start Powershell
-            Process.Start("PowerShell.exe", @"& '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\runall.ps1'" + arguments);
-
-            //Open Progress bar
-            Progress prog = new Progress();
-            prog.Show();
+            Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\runall.ps1'" + arguments);
 
             //Update Log
             string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Progress" Height="54.649" Width="298.056" ResizeMode="NoResize" Icon="ashlogo.png" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FF373737" Topmost="True" ShowInTaskbar="False">
     <Grid Height="56" VerticalAlignment="Top">
-        <ProgressBar x:Name="prg_bar" HorizontalAlignment="Left" Height="23" Margin="10,6,0,0" VerticalAlignment="Top" Width="278"/>
+        <ProgressBar x:Name="prg_bar" HorizontalAlignment="Left" Height="23" Margin="10,6,0,0" VerticalAlignment="Top" Width="278" Background="#FF292929" BorderBrush="White"/>
         <Label x:Name="lbl_Running" Content="Running..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,29,0,0" Foreground="White" FontFamily="Arial"/>
     </Grid>
 </Window>
