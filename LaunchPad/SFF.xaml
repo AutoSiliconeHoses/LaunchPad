@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaunchPad"
+<<<<<<< HEAD
         mc:Ignorable="d" Height="468.091" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
     <Grid Margin="0,0,3,-2.4">
         <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,301,0,0" VerticalAlignment="Top" Width="145" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
+=======
+        mc:Ignorable="d"
+        Title="Stock File Fetcher" Height="337.517" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico">
+    <Grid Margin="0,0,3.4,-1.6">
+        <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="39,229,0,0" VerticalAlignment="Top" Width="144" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
+>>>>>>> master
         <Label x:Name="lbl_title" Content="Stocks" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="76" Foreground="White" FontFamily="Arial" FontSize="22" Height="35"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="5,239,0,-50.8" VerticalAlignment="Top" Width="0"/>
         <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="210" Margin="10,35,0,0">

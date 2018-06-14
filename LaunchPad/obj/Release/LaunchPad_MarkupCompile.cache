@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 \\diskstation\Feeds\LaunchPad\LaunchPad\obj\Release\
+=======
+C:\Users\Bubbl\Documents\GitKraken\Work\LaunchPad\LaunchPad\obj\Release\
+>>>>>>> master
 LaunchPad
 none
 false
 TRACE
+<<<<<<< HEAD
 \\diskstation\Feeds\LaunchPad\LaunchPad\App.xaml
+=======
+C:\Users\Bubbl\Documents\GitKraken\Work\LaunchPad\LaunchPad\App.xaml
+>>>>>>> master
 3405526288
 
 7-1621827435
