@@ -9,6 +9,6 @@
     <Grid x:Name="Grid" HorizontalAlignment="Left" Height="186" Margin="-3,-1,-2.8,-3.4" VerticalAlignment="Top" Width="177">
         <Button x:Name="Btn_Stocks" Content="Stocks" HorizontalAlignment="Left" Margin="41,53,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF313131" Foreground="White" BorderBrush="White" IsDefault="True" Click="Btn_Stocks_Click"/>
         <Image x:Name="Img_logo" HorizontalAlignment="Left" Height="41" Margin="71,135,0,0" VerticalAlignment="Top" Width="106" Source="ashlogo.png"/>
-        <Button x:Name="Btn_pricing" Content="Pricing" HorizontalAlignment="Left" Margin="41,82,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF313131" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="Btn_pricing" Content="Pricing" HorizontalAlignment="Left" Margin="41,82,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF313131" Foreground="White" BorderBrush="White" Click="Btn_pricing_Click"/>
     </Grid>
 </Window>

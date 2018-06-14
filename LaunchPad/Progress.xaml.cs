@@ -20,17 +20,12 @@ namespace LaunchPad
 
     public partial class Progress : Window
     {
-        private void ProcCount()
-        {
-            Process[] processlist = Process.GetProcesses();
-            int size = processlist.Length;
-            prg_bar.Value = size/count;
-            return;
+        private void ProcCount() {
+            
         }
         public Progress()
         {
-            InitializeComponent();
-            //ProcCount();            
+                    
         }
 
         

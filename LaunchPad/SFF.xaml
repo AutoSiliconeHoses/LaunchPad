@@ -4,34 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaunchPad"
-        mc:Ignorable="d" Height="444.717" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
+        mc:Ignorable="d" Height="468.091" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
     <Grid Margin="0,0,3,-2.4">
         <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,301,0,0" VerticalAlignment="Top" Width="145" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
         <Label x:Name="lbl_title" Content="Stocks" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="76" Foreground="White" FontFamily="Arial" FontSize="22" Height="35"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="5,239,0,-50.8" VerticalAlignment="Top" Width="0"/>
-        <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="210" Margin="10,40,0,0">
-            <StackPanel x:Name="stck_checks" Height="277" Width="200" Background="#FF292929">
+        <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="210" Margin="10,35,0,0">
+            <StackPanel x:Name="stck_checks" Height="335" Width="200" Background="#FF292929">
                 <CheckBox x:Name="chk_dc" Content="Decco" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_dp" Content="Draper" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
+                <CheckBox x:Name="chk_fi" Content="Febi" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_hh" Content="Home Hardware" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_kn" Content="Kilen" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_kb" Content="KYB" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_sx" Content="Stax" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="93"/>
                 <CheckBox x:Name="chk_sxp" Content="Stax Prime" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_tb" Content="ToolBank" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="93"/>
+                <CheckBox x:Name="chk_tbp" Content="ToolBank Prime" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="186"/>
                 <CheckBox x:Name="chk_ts" Content="ToolStream" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_tl" Content="Tetrosyl" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_vo" Content="Valeo" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
+                <CheckBox x:Name="chk_ww" Content="Workshop Warehouse" Height="24" Width="176" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
             </StackPanel>
         </ScrollViewer>
         <CheckBox x:Name="chk_open" Content="Open after completion" FontFamily="Arial" Foreground="White" Margin="40,369,0,0" HorizontalAlignment="Left" Width="145" Height="20" VerticalAlignment="Top"/>
         <Button x:Name="btn_chkAll" Content="Check All" HorizontalAlignment="Left" Margin="40,232,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_chkAll_Click"/>
         <Button x:Name="btn_unchkAll" Content="Uncheck All" HorizontalAlignment="Left" Margin="116,232,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_unchkAll_Click"/>
-        <Label x:Name="lbl_history" Content="Last Run by __ at __" HorizontalAlignment="Left" Height="19" Margin="0,389,0,0" VerticalAlignment="Top" Width="233" FontSize="8" Foreground="White"/>
+        <Label x:Name="lbl_history" Content="Last Run by __ at __" HorizontalAlignment="Left" Margin="-1,408,0,0.496" Width="233" FontSize="8" Foreground="White"/>
         <Button x:Name="Btn_openFolder" Content="Open Folder" HorizontalAlignment="Left" Margin="40,347,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_openFolder_Click" FontSize="10"/>
         <Button x:Name="btn_openSite" Content="Open Site" HorizontalAlignment="Left" Margin="116,347,0,0" VerticalAlignment="Top" Width="69" Height="17" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_openSite_Click"/>
         <Slider x:Name="sli_ship" HorizontalAlignment="Left" Height="28" Margin="40,273,0,0" VerticalAlignment="Top" Width="132" Maximum="24" Minimum="1" SmallChange="1" TickPlacement="TopLeft" Value="4" Cursor="Hand" IsSnapToTickEnabled="True"/>
         <Label Content="Lead time to ship:" x:Name="lbl_ship" HorizontalAlignment="Left" Height="22" Margin="40,251,0,0" VerticalAlignment="Top" Width="145" FontSize="10" Foreground="White"/>
         <Label Content="{Binding ElementName=sli_ship, Path=Value}" Margin="172,261,19.409,122.122" FontSize="14" Foreground="White"/>
+        <Button x:Name="btn_refresh" Content="⟳" HorizontalAlignment="Left" Margin="202,407,0,0" VerticalAlignment="Top" Width="18" Height="19" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_refresh_Click" FontSize="10"/>
+        <CheckBox x:Name="chk_upload" Content="Auto-Upload" FontFamily="Arial" Foreground="White" Margin="40,388,0,0" HorizontalAlignment="Left" Width="145" Height="20" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_BETA" Content="BETA" HorizontalAlignment="Left" Margin="137,381,0,0" VerticalAlignment="Top" Width="48" Foreground="#FFFFCA00" FontFamily="Arial" FontSize="12" Height="22"/>
     </Grid>
 </Window>

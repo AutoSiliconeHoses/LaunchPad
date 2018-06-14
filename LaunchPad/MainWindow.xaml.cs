@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,10 @@ namespace LaunchPad {
 			SFF stocks = new SFF();
 			stocks.Show();
 		}
-	}
+
+        private void Btn_pricing_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("\\\\DISKSTATION\\Feeds\\Pricing File Fetcher\\StockFeed\\GUI\\menu.hta");
+        }
+    }
 }
