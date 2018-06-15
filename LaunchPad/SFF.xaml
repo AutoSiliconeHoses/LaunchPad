@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaunchPad"
-<<<<<<< HEAD
         mc:Ignorable="d" Height="468.091" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
     <Grid Margin="0,0,3,-2.4">
         <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,301,0,0" VerticalAlignment="Top" Width="145" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
