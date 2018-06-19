@@ -19,7 +19,7 @@ using System.Net.Http;
 
 namespace LaunchPad {
     public partial class SFF : Window {
-        public int count;
+        public static int count;
         private static readonly HttpClient client = new HttpClient();
 
         public SFF() {
@@ -136,6 +136,11 @@ namespace LaunchPad {
                 arguments += "vo- ";
                 count++;
             }
+            if (chk_wh.IsChecked.Value == true)
+            {
+                arguments += "wh- ";
+                count++;
+            }
             if (chk_ww.IsChecked.Value == true)
             {
                 arguments += "ww- ";
@@ -169,6 +174,10 @@ namespace LaunchPad {
             lbl_history.Content = File.ReadLines("log.txt").Last();
         }
 
-        
+        private void Btn_test_Click(object sender, RoutedEventArgs e)
+        {
+            Progress bar = new Progress();
+            bar.Show();
+        }
     }
 }

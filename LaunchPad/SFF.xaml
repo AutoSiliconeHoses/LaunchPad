@@ -3,20 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LaunchPad"
         mc:Ignorable="d" Height="468.091" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
-    <Grid Margin="0,0,3,-2.4">
-        <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,301,0,0" VerticalAlignment="Top" Width="145" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
-=======
-        mc:Ignorable="d"
-        Title="Stock File Fetcher" Height="337.517" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico">
+
     <Grid Margin="0,0,3.4,-1.6">
-        <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="39,229,0,0" VerticalAlignment="Top" Width="144" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
->>>>>>> master
+        <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,304,0,0" VerticalAlignment="Top" Width="144" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>
         <Label x:Name="lbl_title" Content="Stocks" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="76" Foreground="White" FontFamily="Arial" FontSize="22" Height="35"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="5,239,0,-50.8" VerticalAlignment="Top" Width="0"/>
-        <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top" Width="210" Margin="10,35,0,0">
-            <StackPanel x:Name="stck_checks" Height="335" Width="200" Background="#FF292929">
+        <ScrollViewer x:Name="ScrollView" HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="210" Margin="10,40,0,0">
+            <StackPanel x:Name="stck_checks" Height="364" Width="200" Background="#FF292929">
                 <CheckBox x:Name="chk_dc" Content="Decco" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_dp" Content="Draper" Height="24" FontSize="16" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="White" Margin="14,0,0,0" HorizontalAlignment="Left" Width="150"/>
                 <CheckBox x:Name="chk_fi" Content="Febi" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
@@ -30,6 +24,7 @@
                 <CheckBox x:Name="chk_ts" Content="ToolStream" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_tl" Content="Tetrosyl" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_vo" Content="Valeo" Height="24" Width="150" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
+                <CheckBox x:Name="chk_wh" Content="Warehouse" Height="24" Width="176" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
                 <CheckBox x:Name="chk_ww" Content="Workshop Warehouse" Height="24" Width="176" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Arial" Foreground="White" Margin="14,0,0,0"/>
             </StackPanel>
         </ScrollViewer>

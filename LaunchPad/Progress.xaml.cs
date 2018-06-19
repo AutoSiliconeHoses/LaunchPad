@@ -1,33 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Diagnostics;
-using System.ServiceProcess;
+﻿using System.ComponentModel;
 using System.Threading;
+using System.Windows;
+
 
 namespace LaunchPad
 {
-
     public partial class Progress : Window
     {
-        private void ProcCount() {
-            
-        }
-        public Progress()
+        private int Items()
         {
-                    
+            int fileCount = System.IO.Directory.GetFiles(@"\\DISKSTATION\Feeds\Stock File Fetcher\Upload").Length;
+            //MessageBox.Show(fileCount.ToString());
+            //MessageBox.Show(SFF.count.ToString());
+            double percent = ((double)fileCount / (double)SFF.count) * 100;
+            int percentage = (int)percent;
+            System.Diagnostics.Debug.WriteLine(percentage.ToString());
+            return percentage;
         }
 
-        
+        private void Counter_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // run all background tasks here
+        }
+
+        private void Counter_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //update ui once worker complete his work
+        }
+
+        public Progress()
+        {
+            InitializeComponent();
+
+            //private BackgroundWorker worker = new BackgroundWorker();
+
+            //SFF.count = 5;
+            //while (Items() != 100)
+            //{
+            //    Thread.Sleep(500);
+            //    prg_bar.Value = Items();
+            //}
+            //this.Close();
+        }
     }
 }
