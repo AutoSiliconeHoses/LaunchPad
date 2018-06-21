@@ -91,6 +91,11 @@ namespace LaunchPad {
                 arguments += "fi- ";
                 count++;
             }
+            if (chk_fps.IsChecked.Value == true)
+            {
+                arguments += "fps- ";
+                count++;
+            }
             if (chk_hh.IsChecked.Value == true)
             {
                 arguments += "hh- ";
@@ -104,6 +109,11 @@ namespace LaunchPad {
             if (chk_kb.IsChecked.Value == true)
             {
                 arguments += "kb- ";
+                count++;
+            }
+            if (chk_rp.IsChecked.Value == true)
+            {
+                arguments += "rp- ";
                 count++;
             }
             if (chk_sx.IsChecked.Value == true) {
@@ -134,11 +144,6 @@ namespace LaunchPad {
             }
             if (chk_vo.IsChecked.Value == true) {
                 arguments += "vo- ";
-                count++;
-            }
-            if (chk_wh.IsChecked.Value == true)
-            {
-                arguments += "wh- ";
                 count++;
             }
             if (chk_ww.IsChecked.Value == true)
