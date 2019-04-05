@@ -19,3 +19,5 @@
 \\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\x64\Release\LaunchPad.csproj.CoreCompileInputs.cache
 \\DISKSTATION\Feeds\LaunchPad\LaunchPad\bin\x64\Release\System.Management.Automation.dll
 \\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\x64\Release\LaunchPad.csproj.CopyComplete
+\\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\x64\Release\Ordering.g.cs
+\\DISKSTATION\Feeds\LaunchPad\LaunchPad\obj\x64\Release\Ordering.baml

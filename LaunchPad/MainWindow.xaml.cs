@@ -30,5 +30,11 @@ namespace LaunchPad {
         {
             Process.Start("\\\\DISKSTATION\\Feeds\\Pricing File Fetcher\\StockFeed\\GUI\\menu.hta");
         }
+
+        private void Btn_zeroing_Click(object sender, RoutedEventArgs e)
+        {
+            Zeroing zero = new Zeroing();
+            zero.Show();
+        }
     }
 }
