@@ -1,0 +1,2 @@
+sku	price	minimum-seller-allowed-price	maximum-seller-allowed-price	quantity	leadtime-to-ship
+AFB025B-ASH				0	4

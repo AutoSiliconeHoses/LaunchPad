@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
@@ -84,7 +85,7 @@ namespace LaunchPad
                         {
                             string supplier = suppliers[tags.IndexOf(tag)];
                             string path = @"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles\" + supplier + ".txt";
-                            System.Diagnostics.Debug.WriteLine(stock + " is a " + supplier + " SKU");
+                            Debug.WriteLine(stock + " is a " + supplier + " SKU");
                             // Create header
                             if (!File.Exists(@path))
                             {
@@ -108,7 +109,7 @@ namespace LaunchPad
             }
             // Check to make sure there were valid skus
             if (IsDirectoryEmpty(@"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles\")) {
-                System.Diagnostics.Debug.WriteLine("Directory empty");
+                Debug.WriteLine("Directory empty");
             }
             else
             {
@@ -119,9 +120,27 @@ namespace LaunchPad
                     {
                         string originalFileName = file.FullName;
                         string newFileName = @"\\STOCKMACHINE\AmazonTransport\production\outgoing\ZEROING" + file.Name;
+                        try {
+                            File.Copy(originalFileName, newFileName);
+                        } catch
+                        {
+                            MessageBox.Show("You don't have permission to move the files to the Stock Machine");
+                        }
+                        
+                    }
+                    if (chk_ebay.IsChecked == true)
+                    {
+                        string zeroFolder = @"\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\eBay\Stock\Zeroing";
+                        Directory.CreateDirectory(zeroFolder);
+
+                        string originalFileName = file.FullName;
+                        string newFileName = zeroFolder + "\\" + file.Name;
                         File.Copy(originalFileName, newFileName);
+
+                        Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\eBayUpload.ps1' " + "zero");
                     }
                 }
+                MessageBox.Show("Process complete.");
             }
         }
     }
