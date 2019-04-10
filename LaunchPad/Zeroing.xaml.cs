@@ -97,7 +97,7 @@ namespace LaunchPad
                             // Add sku to alterations file
                             try
                             {
-                                File.AppendAllText(@"\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\alterations.csv", stock + ",0\n");
+                                File.AppendAllText(@"\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\alterations.csv", stock.ToUpper() + ",0\n");
                             } catch (IOException err)
                             {
                                 MessageBox.Show(err.Message);
@@ -109,7 +109,7 @@ namespace LaunchPad
             }
             // Check to make sure there were valid skus
             if (IsDirectoryEmpty(@"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles\")) {
-                Debug.WriteLine("Directory empty");
+                MessageBox.Show("Directory empty");
             }
             else
             {
@@ -137,7 +137,7 @@ namespace LaunchPad
                         string newFileName = zeroFolder + "\\" + file.Name;
                         File.Copy(originalFileName, newFileName);
 
-                        Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\eBayUpload.ps1' " + "zero");
+                        Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\eBayUpload.ps1' zero");
                     }
                 }
                 MessageBox.Show("Process complete.");
