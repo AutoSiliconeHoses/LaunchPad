@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaunchPad"
         mc:Ignorable="d"
-        Title="LaunchPad" Height="232.238" Width="192.892" FontFamily="Arial" Icon="ASH-Black.ico" ResizeMode="NoResize" Background="#FF313131">
+        Title="LaunchPad" Height="232.238" Width="192.892" FontFamily="Arial" Icon="ASH-Black.ico" ResizeMode="CanMinimize" Background="#FF313131">
     <Grid x:Name="Grid" Margin="-3,-1,4,1">
         <Image x:Name="Img_logo" HorizontalAlignment="Left" Height="41" Margin="80,149,0,0" VerticalAlignment="Top" Width="106" Source="ashlogo.png"/>
         <Button x:Name="Btn_Stocks" Content="Stock" HorizontalAlignment="Left" Margin="41,53,0,0" VerticalAlignment="Top" Width="100" Height="24" Background="#FF313131" Foreground="White" BorderBrush="White" IsDefault="True" Click="Btn_Stocks_Click"/>

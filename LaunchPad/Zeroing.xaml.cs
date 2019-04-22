@@ -11,8 +11,8 @@ namespace LaunchPad
     {
 
         // Define tags/supplier lists
-        private List<string> tags = new List<string>();
-        private List<string> suppliers = new List<string>();
+        private readonly List<string> tags = new List<string>();
+        private readonly List<string> suppliers = new List<string>();
 
         public Zeroing()
         {
@@ -34,11 +34,37 @@ namespace LaunchPad
             }
         }
 
+        string RemoveWhitespace(string value)
+        {
+            if (String.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+            string lineSeparator = ((char)0x2028).ToString();
+            string paragraphSeparator = ((char)0x2029).ToString();
+
+            return value.Replace("\r\n", string.Empty)
+                        .Replace("\n", string.Empty)
+                        .Replace("\r", string.Empty)
+                        .Replace(" ", string.Empty)
+                        .Replace(lineSeparator, string.Empty)
+                        .Replace(paragraphSeparator, string.Empty);
+        }
+
         void EnterClicked(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
-                AddList.Text = AddBox.Text + Environment.NewLine + AddList.Text;
+                using (StringReader reader = new StringReader(AddBox.Text))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string cleanLine = RemoveWhitespace(line);
+                        AddList.Text += cleanLine + Environment.NewLine;
+                        scrl_box.ScrollToBottom();
+                    }
+                }
                 AddBox.Text = "";
                 e.Handled = true;
             }
@@ -65,7 +91,7 @@ namespace LaunchPad
             // Define folder and clear old files
             DirectoryInfo stockFileFolder = new DirectoryInfo(@"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles");
             FileInfo[] oldFiles = stockFileFolder.GetFiles();
-            
+
             foreach (FileInfo file in oldFiles)
             {
                 file.Delete();
@@ -98,18 +124,20 @@ namespace LaunchPad
                             try
                             {
                                 File.AppendAllText(@"\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\alterations.csv", stock.ToUpper() + ",0\n");
-                            } catch (IOException err)
+                            }
+                            catch (IOException err)
                             {
                                 MessageBox.Show(err.Message);
                             }
                         }
-                        
+
                     }
                 }
             }
             // Check to make sure there were valid skus
-            if (IsDirectoryEmpty(@"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles\")) {
-                MessageBox.Show("Directory empty");
+            if (IsDirectoryEmpty(@"\\DISKSTATION\Feeds\LaunchPad\LaunchPad\Resources\StockFiles\"))
+            {
+                MessageBox.Show("No valid skus found.");
             }
             else
             {
@@ -119,14 +147,16 @@ namespace LaunchPad
                     if (chk_amazon.IsChecked == true)
                     {
                         string originalFileName = file.FullName;
-                        string newFileName = @"\\STOCKMACHINE\AmazonTransport\production\outgoing\ZEROING" + file.Name;
-                        try {
+                        string newFileName = @"\\STOCKMACHINE\AmazonTransport\production\outgoing\ZEROING-" + file.Name;
+                        try
+                        {
                             File.Copy(originalFileName, newFileName);
-                        } catch
+                        }
+                        catch
                         {
                             MessageBox.Show("You don't have permission to move the files to the Stock Machine");
                         }
-                        
+
                     }
                     if (chk_ebay.IsChecked == true)
                     {
@@ -137,7 +167,7 @@ namespace LaunchPad
                         string newFileName = zeroFolder + "\\" + file.Name;
                         File.Copy(originalFileName, newFileName);
 
-                        Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\GUI\eBayUpload.ps1' zero");
+                        Process.Start("PowerShell.exe", @"-ExecutionPolicy Bypass & '\\DISKSTATION\Feeds\Stock File Fetcher\StockFeed\eBay\eBayZero.ps1'");
                     }
                 }
                 MessageBox.Show("Process complete.");

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" Height="471" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="NoResize" Icon="down.ico" Title="Stock File Fetcher">
+        mc:Ignorable="d" Height="471" Width="242.144" Background="#FF313131" FontFamily="Arial" ResizeMode="CanMinimize" Icon="down.ico" Title="Stock File Fetcher">
 
     <Grid Margin="0,0,3.4,-1.6">
         <Button x:Name="btn_Run" Content="Run Stocks" HorizontalAlignment="Left" Margin="40,304,0,0" VerticalAlignment="Top" Width="144" Height="38" Background="#FF373737" BorderBrush="White" Foreground="White" FontFamily="Arial" Click="Btn_Run_Click" IsDefault="True"/>

@@ -4,13 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Net.Http;
 
 namespace LaunchPad
 {
     public partial class SFF : Window {
         public static int count;
-        private static readonly HttpClient client = new HttpClient();
 
         public SFF() {
             InitializeComponent();
@@ -58,7 +56,7 @@ namespace LaunchPad
 
         private void Btn_Run_Click(object sender, RoutedEventArgs e) {
             string arguments = " ";
-            int ship = 4;
+            int ship;
             count = 0;
 
             //Shipping Argument
@@ -77,10 +75,10 @@ namespace LaunchPad
             }
 
             //Open file after completion
-            if (chk_open.IsChecked.Value == true) { arguments = arguments + "op- "; }
+            if (chk_open.IsChecked.Value == true) { arguments += "op- "; }
 
             //Auto-Upload
-            if (chk_upload.IsChecked.Value == true) { arguments = arguments + "up- "; }
+            if (chk_upload.IsChecked.Value == true) { arguments += "up- "; }
 
             //Check for empty list
             if (count == 0) {
